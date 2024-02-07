@@ -1,4 +1,6 @@
 import React from "react";
+import logo from "../../Assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -23,54 +25,41 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className=" text-pink-600 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <Link to="/all-foods">All Foods</Link>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <Link to="/add-foods">Add Foods</Link>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link to="/about-us">About Us</Link>
+            </li>
+            <li>
+              <Link>Contact Us</Link>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          <img src={logo} className="max-w-sm rounded-lg shadow-2xl w-1/2" />
+        </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-end hidden lg:flex text-pink-600">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Item 1</a>
+            <Link to="/all-foods">All Foods</Link>
           </li>
           <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
+            <Link to="/add-foods">Add Foods</Link>
           </li>
           <li>
-            <a>Item 3</a>
+            <Link to="/about-us">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact-us">Contact Us</Link>
           </li>
         </ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
       </div>
     </div>
   );
