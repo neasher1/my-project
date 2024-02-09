@@ -1,5 +1,6 @@
 import React from "react";
 import bgImage from '../../Assets/bgImage.jpg';
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -11,7 +12,7 @@ const Banner = () => {
           <p className="py-6 text-2xl font-semibold">
             Leading online automotive foods in Bangladesh
           </p>
-          <button className="btn btn-primary text-white">View Foods</button>
+          <Link to='/all-foods' className="btn btn-primary text-white">View All Foods</Link>
         </div>
       </div>
     </div>

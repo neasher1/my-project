@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 
 const AddFoods = () => {
 
@@ -33,7 +34,7 @@ const AddFoods = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    // toast.success("Product added successfully");
+                    toast.success("Product added successfully");
                     form.reset();
                 }
             })

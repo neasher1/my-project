@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../Assets/logo.png"
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
       </aside>
       <nav>
         <h6 className="footer-title">Company</h6>
-        <a className="link link-hover">About us</a>
+        <Link to="/about-us" className="link link-hover">About us</Link>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">All Foods</a>
         <a className="link link-hover">Add Foods</a>
