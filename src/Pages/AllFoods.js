@@ -7,7 +7,7 @@ const AllFoods = () => {
     const [foods, setFoods] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/all-foods')
+        fetch('http://localhost:5001/all-employee')
             .then(res => res.json())
             .then(data => setFoods(data))
             .catch(error => console.log(error))
@@ -17,7 +17,7 @@ const AllFoods = () => {
     return (
         <div className='my-20 max-w-screen-xl mx-auto'>
         <div className='text-center'>
-            <h2 className='text-5xl font-bold text-pink-600'>Our All Foods</h2>
+            <h2 className='text-5xl font-bold text-pink-600'>Our All Employee</h2>
         </div>
         <div className='grid md:grid-cols-3'>
             {

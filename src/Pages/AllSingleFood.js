@@ -3,11 +3,12 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const AllSingleFood = ({ food }) => {
-  const { _id, productName, description, img, ratings, price } = food;
+  const { _id, employeeName, employeeEmail, address, img, salary, designation, mbleNumber, date, description } = food;
+
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/all-foods/${id}`, {
+    fetch(`http://localhost:5001/all-employee/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -22,7 +23,13 @@ const AllSingleFood = ({ food }) => {
         <img src={img} alt="pizza" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-primary">{productName}</h2>
+        <h2 className="card-title text-primary">{employeeName}</h2>
+        <h2 className="card-title text-primary">{employeeEmail}</h2>
+        <h2 className="card-title text-primary">{address}</h2>
+        <h2 className="card-title text-primary">{salary}</h2>
+        <h2 className="card-title text-primary">{designation}</h2>
+        <h2 className="card-title text-primary">{mbleNumber}</h2>
+        <h2 className="card-title text-primary">{date}</h2>
         <p>
           {description.length > 100 ? (
             <>{description.slice(0, 100) + "..."}</>
@@ -32,13 +39,10 @@ const AllSingleFood = ({ food }) => {
         </p>
         <div className="card-actions flex-row justify-between mt-2">
           <h2 className="text-2xl font-semibold text-primary">
-            Price: ${price}
-          </h2>
-          <h2 className="text-2xl font-semibold text-primary">
-            ratings: ${ratings}
+            Price: ${salary}
           </h2>
         </div>
-        <Link to={`/food/${_id}`} className="btn btn-primary">
+        <Link to={`/employee/${_id}`} className="btn btn-primary">
           See Details
         </Link>
         <Link onClick={() => handleDelete(_id)} className="btn btn-warning">
